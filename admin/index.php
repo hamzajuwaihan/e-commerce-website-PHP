@@ -7,9 +7,9 @@ if (isset($_SESSION['Role'])) {
         header('Location:./403.php');
     }
 }else{
-    if ($_SESSION['Role'] !== 'Admin') {
+    
         header('Location:./403.php');
-    }
+    
 }
 
 

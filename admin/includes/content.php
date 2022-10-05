@@ -135,7 +135,7 @@ include('./includes/navbar-top.php');
                     <div class="col mr-2">
                         <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
                             Summation Of Payment
-                        <?php $query = "SELECT sum(amount) as `payment` from payment_details";
+                        <?php $query = "SELECT sum(total) as `payment` from order_details";
                                 $res = mysqli_query($conn, $query);
                                 $data = mysqli_fetch_array($res);
 
