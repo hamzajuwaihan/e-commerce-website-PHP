@@ -64,12 +64,9 @@
                         <div class="collapse-divider"></div>
                         <a class="collapse-item" href="addcategory.php">Add Category</a>
                         <a class="collapse-item" href="userspanel.php">Users Panel</a>
-
-                        <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
-                        <div class="collapse-divider"></div>
-                        <h6 class="collapse-header">Other Pages:</h6>
-                        <a class="collapse-item" href="403.php">404 Page</a>
-                        <a class="collapse-item" href="blank.html">Blank Page</a>
+                        <a class="collapse-item" href="orders.php">Orders</a>
+                        
+                        
                     </div>
                 </div>
             </li>
