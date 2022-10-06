@@ -325,7 +325,7 @@ if ($conn->connect_error) {
 
 
   <!-- Footer -->
-  <footer class="bg-dark text-center text-white mt-5">
+  <footer class="bg-dark text-center text-white mt-5" >
     <!-- Grid container -->
     <div class="container p-4">
       <!-- Section: Social media -->
@@ -375,9 +375,9 @@ if ($conn->connect_error) {
     <!-- Section: Text -->
 
     <!-- Section: Links -->
-    <section class="">
+    <section >
       <!--Grid row-->
-      <div class="row justify-content-center">
+      <div class="row justify-content-center" style="width:100%;">
         <!--Grid column-->
         <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
           <h5 class="text-uppercase">Quick Links</h5>
