@@ -64,7 +64,7 @@ if ($conn->connect_error) {
         <!-- Left links -->
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link" href="index.php">Baghdad</a>
+            <a class="nav-link active" href="index.php">Baghdad</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="store.php">Shop</a>
@@ -384,7 +384,7 @@ if ($conn->connect_error) {
 
           <ul class="list-unstyled mb-0">
             <li>
-              <a href="index.php" class="text-white">Home</a>
+              <a href="index.php" class="text-white ">Home</a>
             </li>
             <li>
               <a href="contact.php" class="text-white">Contact</a>

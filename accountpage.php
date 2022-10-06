@@ -173,7 +173,7 @@ require_once("includes/connection.php");
                     <li class="nav-item">
                         <a class="nav-link" href="store.php">Shop</a>
                     </li>
-                    
+
                     <li class="nav-item">
                         <a class="nav-link" href="contact.php">Contact-us</a>
                     </li>
@@ -229,14 +229,17 @@ require_once("includes/connection.php");
                 <div class="pDataContainer">
                     <div class="leftSide">
                         <div class="container">
-                            <div class="row"><a href="accountpage.php">Dashboard</a></div>
-                            <div class="row"><a href="accountpage.php?profile=orders">Orders</a></div>
-                            <div class="row"><a href="accountpage.php?profile=downloads">Downloads</a></div>
-                            <div class="row"><a href="accountpage.php?profile=addresses">Addresses</a></div>
-                            <div class="row"><a href="accountpage.php?profile=details">Account Details</a></div>
-                            <a href="./logout.php" class="text-none text-dark">
-                                <div class="row">Logout</div>
-                            </a>
+                            <?php
+                            if (isset($_SESSION['login'])) {
+                            ?>
+                                <div class="row"><a href="accountpage.php?profile=details">Account Details</a></div>
+                                <a href="./logout.php" class="text-none text-dark">
+                                    <div class="row">Logout</div>
+                                </a>
+                            <?php
+                            }
+                            ?>
+
                         </div>
                     </div>
                     <div class="rightSide">

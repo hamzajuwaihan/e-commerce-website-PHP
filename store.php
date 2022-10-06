@@ -58,7 +58,7 @@ if (isset($_POST['addproduct']) && isset($_SESSION['cart'])) {
                             <a class="nav-link" href="index.php">Baghdad</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="store.php">Shop</a>
+                            <a class="nav-link active" href="store.php">Shop</a>
                         </li>
 
                         <li class="nav-item">
