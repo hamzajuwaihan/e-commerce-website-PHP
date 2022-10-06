@@ -9,7 +9,7 @@ if (isset($_POST['addproduct']) && isset($_SESSION['cart'])) {
   );
 
   array_push($_SESSION['cart'], $item);
-  header("Refresh:0");
+  $message = "item added to cart";
 } elseif (isset($_POST['addproduct'])) {
   $_SESSION['cart'] = array();
   $item = array(
@@ -18,7 +18,9 @@ if (isset($_POST['addproduct']) && isset($_SESSION['cart'])) {
   );
 
   array_push($_SESSION['cart'], $item);
-  header("Refresh:0");
+
+
+  $message = "item added to cart";
 }
 
 ?>
@@ -122,7 +124,7 @@ $comments = $results->fetch_all();
             <li class="nav-item">
               <a class="nav-link" href="store.php">Shop</a>
             </li>
-            
+
             <li class="nav-item">
               <a class="nav-link" href="contact.php">Contact-us</a>
             </li>
@@ -170,6 +172,11 @@ $comments = $results->fetch_all();
 
   <section class="py-5">
     <div class="container px-4 px-lg-5 my-5">
+      <?php
+      if (isset($message)) {
+        echo '<div class="alert alert-success" role="alert">' . $message . '</div>';
+      }
+      ?>
       <div class="row gx-4 gx-lg-5 ">
         <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="./admin/images/<?php echo $product_image ?>" alt="..." /></div>
         <div class="col-md-6">
