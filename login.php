@@ -32,7 +32,7 @@ if (isset($_POST['email'])) {
                 $_SESSION['login'] = $_POST['email'];
                 $_SESSION['username'] = $row["username"];
                 $_SESSION['id'] = $row['id'];
-                if ($_SESSION['cart']) {
+                if (isset($_SESSION['cart'])) {
                     header('Location:./checkout.php');
 
                 ?>
@@ -40,6 +40,12 @@ if (isset($_POST['email'])) {
                         window.location.href = "checkout.php";
                     </script>
 <?php
+                }else{
+                    ?>
+                    <script>
+                        window.location.href = "accountpage.php";
+                    </script>
+                    <?php
                 }
                 die();
             }
