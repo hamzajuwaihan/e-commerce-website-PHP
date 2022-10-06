@@ -110,6 +110,10 @@ if (isset($_POST['addproduct']) && isset($_SESSION['cart'])) {
                 echo '<div class="alert alert-success" role="alert">
             ' . $message . '
         </div>';
+            } elseif (isset($_GET['order'])) {
+                echo '<div class="alert alert-success" role="alert">
+                We will contact you about your order.
+            </div>';
             }
             ?>
             <div class=" col-md-3 filter">

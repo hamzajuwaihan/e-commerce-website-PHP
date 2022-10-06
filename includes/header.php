@@ -3,7 +3,7 @@
 
 <head>
 
-  <title>navbar</title>
+  <title>Baghdad</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="/includes/bootstrap-5.2.1-dist/css/style.css">

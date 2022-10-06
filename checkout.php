@@ -34,7 +34,7 @@ if (isset($_POST['submit'])) {
     echo "0";
   }
   unset($_SESSION['cart']);
-  header('Location:./index.php');
+  header('Location:./store.php?order=success');
   echo "success";
 }
 ?>
@@ -172,7 +172,7 @@ if (isset($_POST['submit'])) {
 
               <label for="email"><i class="fa fa-envelope"></i> Email</label>
               <input type="text" id="email" name="email" placeholder="mail@example.com" value="<?php echo $email ?>" disabled>
-
+              <input type="text" id="success" name="success"  value="true" hidden>
               <input type="submit" value="Continue to checkout" name="submit" class="btn">
         </form>
       </div>
