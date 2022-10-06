@@ -70,9 +70,6 @@ if ($conn->connect_error) {
             <a class="nav-link" href="store.php">Shop</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Category</a>
-          </li>
-          <li class="nav-item">
             <a class="nav-link" href="contact.php">Contact-us</a>
           </li>
         </ul>
@@ -83,13 +80,20 @@ if ($conn->connect_error) {
       <!-- Right elements -->
       <div class="d-flex align-items-center">
         <!-- Icon -->
-        <a class="text-reset me-3" href="#">
-          <i class="fas fa-shopping-cart"></i>
-        </a>
+        
 
         <!-- Notifications -->
-        <div class="mr-3">
+        <div class=" position-relative mr-3">
           <a href="./cart.php"><img class="rounded-circle" height="25" src="./image/icon.png" /> </a>
+          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+            <?php
+            if (isset($_SESSION['cart'])) {
+              echo count($_SESSION['cart']);
+            } else {
+              echo 0;
+            }
+            ?>
+          </span>
         </div>
 
 
@@ -105,7 +109,7 @@ if ($conn->connect_error) {
     <!-- Container wrapper -->
   </nav>
   <!-- Navbar -->
-  <div class="banner">
+  <div class="banner ">
     <!-- <img src="./image/1.jpg" alt="Snow" style="width:100%; height:500px;"> -->
     <div class="ml-5 pl-5">
 

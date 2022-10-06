@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="192" height="108" viewBox="0 0 192 108">
+    <defs>
+        <style>
+            .b,.g{fill:#fff493}.b,.c,.f,.g{stroke:#3a36e4;stroke-width:2px;stroke-linejoin:round}.c{fill:#fff}.f{fill:none}.g{stroke-linecap:round}
+        </style>
+    </defs>
+    <path fill="#fef9db" d="M0 0h192v108H0z"/>
+    <path class="b" d="M90.9 18h61.9v43.1H90.9z"/>
+    <path class="c" d="M130.5 39.6l-13.9-8v16l14-8z"/>
+    <path class="b" d="M148.8 74l-9.7-5.2 20.1-38.3 9.8 5.1zM143.9 71.4l20.2-38.3"/>
+    <path class="c" d="M169 35.7l-9.8-5.1 3.9-7.4 9.7 5.1zM138.3 82l10.5-8-9.7-5.2-.8 13.3zM142.1 79.8l-4-2.1"/>
+    <path class="b" d="M28 39.7h11v4.9H28z"/>
+    <rect class="c" x="24.4" y="44.7" width="55" height="37" rx="4.5"/>
+    <circle class="c" cx="56.8" cy="63.1" r="18.5"/>
+    <path class="c" d="M50.8 34.8h9.7a4 4 0 014 4v5.9H46.8v-6a4 4 0 014-3.9z"/>
+    <circle cx="33.4" cy="52.6" r="2.9" stroke-miterlimit="10" stroke="#3a36e4" stroke-width="2" fill="#fff493"/>
+    <circle cx="56.8" cy="63.1" r="9.5" fill="#fff493"/>
+    <path class="f" d="M46.9 39.6h17.5"/>
+    <circle class="f" cx="56.8" cy="63.1" r="12.7"/>
+    <path class="g" d="M90.9 73.7H128M90.9 81.6H128M90.9 89.6h27.4"/>
+</svg>

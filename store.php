@@ -8,7 +8,7 @@ if (isset($_POST['addproduct']) && isset($_SESSION['cart'])) {
     );
 
     array_push($_SESSION['cart'], $item);
-    header("Refresh:0");
+    $message = "item added to cart";
 } elseif (isset($_POST['addproduct'])) {
     $_SESSION['cart'] = array();
     $item = array(
@@ -17,7 +17,7 @@ if (isset($_POST['addproduct']) && isset($_SESSION['cart'])) {
     );
 
     array_push($_SESSION['cart'], $item);
-    header("Refresh:0");
+    $message = "item added to cart";
 }
 
 ?>
@@ -72,14 +72,22 @@ if (isset($_POST['addproduct']) && isset($_SESSION['cart'])) {
                 <!-- Right elements -->
                 <div class="d-flex align-items-center">
                     <!-- Icon -->
-                    <a class="text-reset me-3" href="#">
-                        <i class="fas fa-shopping-cart"></i>
-                    </a>
 
                     <!-- Notifications -->
-                    <div class="mr-3">
+
+                    <div class=" position-relative mr-3">
                         <a href="./cart.php"><img class="rounded-circle" height="25" src="./image/icon.png" /> </a>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                            <?php
+                            if (isset($_SESSION['cart'])) {
+                                echo count($_SESSION['cart']);
+                            } else {
+                                echo 0;
+                            }
+                            ?>
+                        </span>
                     </div>
+
 
 
                     <!-- Avatar -->
@@ -95,9 +103,18 @@ if (isset($_POST['addproduct']) && isset($_SESSION['cart'])) {
         </nav>
     </header>
     <div class="container-fluid bg-light">
+
         <div class="row pt-5 products-grid ">
+            <?php
+            if (isset($message)) {
+                echo '<div class="alert alert-success" role="alert">
+            ' . $message . '
+        </div>';
+            }
+            ?>
             <div class=" col-md-3 filter">
                 <div class="row g-0 mt-5">
+
                     <div class="col-12 ">
                         <form action="./search.php" method="get" class="d-flex gap-2 ">
                             <input type="text" name="search" id="" placeholder="Search products.." class="w-100">
@@ -147,7 +164,8 @@ if (isset($_POST['addproduct']) && isset($_SESSION['cart'])) {
                                 <span class="qty-up">+</span>
                                 <span class="qty-down">-</span>
                             </div>
-                            <button class="search-btn" type="submit" name="price">filter</button>
+                            <button class="search-btn cart-btn w-100 mt-2" type="submit" name="price">filter</button>
+
                             </form>
                         </div>
                     </div>

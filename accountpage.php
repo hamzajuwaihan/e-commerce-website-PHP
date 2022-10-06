@@ -173,9 +173,7 @@ require_once("includes/connection.php");
                     <li class="nav-item">
                         <a class="nav-link" href="store.php">Shop</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Category</a>
-                    </li>
+                    
                     <li class="nav-item">
                         <a class="nav-link" href="contact.php">Contact-us</a>
                     </li>
@@ -192,8 +190,17 @@ require_once("includes/connection.php");
                 </a>
 
                 <!-- Notifications -->
-                <div class="mr-3">
+                <div class=" position-relative mr-3">
                     <a href="./cart.php"><img class="rounded-circle" height="25" src="./image/icon.png" /> </a>
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                        <?php
+                        if (isset($_SESSION['cart'])) {
+                            echo count($_SESSION['cart']);
+                        } else {
+                            echo 0;
+                        }
+                        ?>
+                    </span>
                 </div>
 
 
@@ -306,9 +313,7 @@ require_once("includes/connection.php");
     </section>
 
 
-    <div class="content d-flex align-items-center bg-dark">
-        <h2 class="w-100 text-center"></h2>
-    </div>
+
     <!-- Footer -->
     <footer class="bg-dark text-center text-white mt-5">
         <!-- Grid container -->

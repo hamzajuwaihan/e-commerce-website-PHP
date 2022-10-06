@@ -5,7 +5,63 @@ if (isset($_SESSION['login'])) {
     header("Location: accountpage.php");
 } else {
 }
+
+if (isset($_POST['email'])) {
+
+    $email =  $_POST['email'];
+    $password = $_POST['pass'];
+
+    $SELECT = "SELECT * FROM users WHERE email = '$email' AND password = '$password'";
+    $result = $conn->query($SELECT);
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            //echo "id: " . $row["Role"] ."<br>";
+            $_SESSION["Role"] = $row["role"];
+            if ($row["role"] == "Admin") {
+                $_SESSION['login'] = $_POST['email'];
+                $_SESSION['username'] = $row["username"];
+                $_SESSION['user_id'] = $row['id'];
 ?>
+                <script>
+                    window.location.href = "admin/index.php";
+                </script>
+                <?php
+                die();
+            }
+            if ($row["role"] == "user") {
+                $_SESSION['login'] = $_POST['email'];
+                $_SESSION['username'] = $row["username"];
+                $_SESSION['id'] = $row['id'];
+                if ($_SESSION['cart']) {
+                    header('Location:./checkout.php');
+
+                ?>
+                    <script>
+                        window.location.href = "checkout.php";
+                    </script>
+<?php
+                }
+                die();
+            }
+        }
+        // output data of each row
+        $host = $_SERVER['HTTP_HOST'];
+        $uri = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
+        header("location:http://$host$uri/$extra");
+        exit();
+    } else {
+        if (isset($_POST['email'])) {
+            echo "<script>alert('Invalid Email and / or password');</script>";
+            $extra = "./index.php";
+            $host  = $_SERVER['HTTP_HOST'];
+            $uri  = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
+            //header("location:http://$host$uri/$extra");
+            exit();
+        }
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -48,59 +104,7 @@ if (isset($_SESSION['login'])) {
                 </form>
             </div>
         </div>
-        <?php
-        if (isset($_POST['email'])) {
 
-            $email =  $_POST['email'];
-            $password = $_POST['pass'];
-
-            $SELECT = "SELECT * FROM users WHERE email = '$email' AND password = '$password'";
-            $result = $conn->query($SELECT);
-            if ($result->num_rows > 0) {
-                while ($row = $result->fetch_assoc()) {
-                    //echo "id: " . $row["Role"] ."<br>";
-                    $_SESSION["Role"] = $row["role"];
-                    if ($row["role"] == "Admin") {
-                        $_SESSION['login'] = $_POST['email'];
-                        $_SESSION['username'] = $row["username"];
-                        $_SESSION['user_id']=$row['id'];
-        ?>
-                        <script>
-                            window.location.href = "admin/index.php";
-                        </script>
-                    <?php
-                        die();
-                    }
-                    if ($row["role"] == "user") {
-                        $_SESSION['login'] = $_POST['email'];
-                        $_SESSION['username'] = $row["username"];
-                        $_SESSION['id']=$row['id'];
-                        echo $_SESSION['login'];
-                    ?>
-                        <script>
-                            window.location.href = "accountpage.php";
-                        </script>
-        <?php
-                        die();
-                    }
-                }
-                // output data of each row
-                $host = $_SERVER['HTTP_HOST'];
-                $uri = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
-                header("location:http://$host$uri/$extra");
-                exit();
-            } else {
-                if (isset($_POST['email'])) {
-                    echo "<script>alert('Invalid Email and / or password');</script>";
-                    $extra = "./index.php";
-                    $host  = $_SERVER['HTTP_HOST'];
-                    $uri  = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
-                    //header("location:http://$host$uri/$extra");
-                    exit();
-                }
-            }
-        }
-        ?>
     </section>
 
     <?php

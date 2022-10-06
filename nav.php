@@ -52,9 +52,7 @@
         <li class="nav-item">
           <a class="nav-link" href="store.php">Shop</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Category</a>
-        </li>
+        
         <li class="nav-item">
           <a class="nav-link" href="contact.php">Contact-us</a>
         </li>

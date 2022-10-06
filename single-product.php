@@ -122,9 +122,7 @@ $comments = $results->fetch_all();
             <li class="nav-item">
               <a class="nav-link" href="store.php">Shop</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Category</a>
-            </li>
+            
             <li class="nav-item">
               <a class="nav-link" href="contact.php">Contact-us</a>
             </li>
@@ -141,8 +139,17 @@ $comments = $results->fetch_all();
           </a>
 
           <!-- Notifications -->
-          <div class="mr-3">
+          <div class=" position-relative mr-3">
             <a href="./cart.php"><img class="rounded-circle" height="25" src="./image/icon.png" /> </a>
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+              <?php
+              if (isset($_SESSION['cart'])) {
+                echo count($_SESSION['cart']);
+              } else {
+                echo 0;
+              }
+              ?>
+            </span>
           </div>
 
 

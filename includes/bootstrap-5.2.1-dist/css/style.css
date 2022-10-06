@@ -8,13 +8,14 @@
     font-weight: bolder;
     height: 400px;
     font-size: 26px;
-    background-image: url('../../../image/1.jpg');
+    background-image: url('../../../image/imageedit_1_6751759712.jpg');
     background-size: 100% 100%;
     text-align: center;
     width: 100%;
     display: flex;
         justify-content: center;
     flex-direction: column;
+    
   } 
 
   .banner {
@@ -23,7 +24,7 @@
     color: white;
     font-weight: bolder;
     height: 500px;
-    background-image: url('../../../image/1.jpg');
+    background-image: url('../../../image/imageedit_1_6751759712.jpg');
     background-size: 100% 100%;
     display: flex;
    

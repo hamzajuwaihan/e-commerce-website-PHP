@@ -81,8 +81,17 @@ if (isset($_POST['addproduct']) && isset($_SESSION['cart'])) {
                     </a>
 
                     <!-- Notifications -->
-                    <div class="mr-3">
+                    <div class=" position-relative mr-3">
                         <a href="./cart.php"><img class="rounded-circle" height="25" src="./image/icon.png" /> </a>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                            <?php
+                            if (isset($_SESSION['cart'])) {
+                                echo count($_SESSION['cart']);
+                            } else {
+                                echo 0;
+                            }
+                            ?>
+                        </span>
                     </div>
 
 
@@ -126,7 +135,8 @@ if (isset($_POST['addproduct']) && isset($_SESSION['cart'])) {
                                 <span class="qty-up">+</span>
                                 <span class="qty-down">-</span>
                             </div>
-                            <button class="search-btn" type="submit" name="price">filter</button>
+                            <button class="search-btn cart-btn w-100 mt-2" type="submit" name="price">filter</button>
+
                             </form>
                         </div>
                     </div>
@@ -302,7 +312,7 @@ if (isset($_POST['addproduct']) && isset($_SESSION['cart'])) {
                     <!--Grid row-->
                 </section>
                 <!-- Section: Links -->
-            </div>
+        </div>
         <!-- Grid container -->
 
         <!-- Copyright -->

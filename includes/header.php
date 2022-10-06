@@ -54,8 +54,17 @@
 
 
       <!-- Notifications -->
-      <div class="mr-3">
+      <div class=" position-relative mr-3">
         <a href="./cart.php"><img class="rounded-circle" height="25" src="./image/icon.png" /> </a>
+        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+          <?php
+          if (isset($_SESSION['cart'])) {
+            echo count($_SESSION['cart']);
+          } else {
+            echo 0;
+          }
+          ?>
+        </span>
       </div>
       <!-- Avatar -->
       <div class="mx-3">
