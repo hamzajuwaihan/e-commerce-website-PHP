@@ -107,11 +107,11 @@ if (isset($_POST['addproduct']) && isset($_SESSION['cart'])) {
         <div class="row pt-5 products-grid ">
             <?php
             if (isset($message)) {
-                echo '<div class="alert alert-success" role="alert">
+                echo '<div class="alert alert-success container" role="alert">
             ' . $message . '
         </div>';
             } elseif (isset($_GET['order'])) {
-                echo '<div class="alert alert-success" role="alert">
+                echo '<div class="alert alert-success container" role="alert">
                 We will contact you about your order.
             </div>';
             }

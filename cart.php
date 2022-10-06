@@ -130,7 +130,7 @@ if (isset($_POST['checkout'])) {
                             <td class="product-remove">
                                 <form action="" method="post">
                                     <button type="submit" name="delete" value="<?php echo $row[0]; ?>" class="btn" onclick="return confirm('Are you sure you want to delete this product?')">
-                                        <i class="bi bi-x-circle"></i>
+                                        <i class="bi bi-x-circle text-danger"></i>
                                     </button>
                                 </form>
                             </td>
@@ -146,7 +146,7 @@ if (isset($_POST['checkout'])) {
                                 </bdi>
                             </td>
                             <td>
-                                <input type="number" class="input-group-text ms-auto" min="0" value="<?php echo $v ?>">
+                                <input type="number" class="input-group-text ms-auto" min="0" value="<?php echo $v ?>" disabled>
                             </td>
                             <td>
                                 <bdi>
